@@ -35,9 +35,16 @@ export function CategoryCards() {
 
         return (
           // Use Card component to display values by category
-          <div>
-            {category.label} - ฿{categoryTotal.toFixed(2)}
-          </div>
+          <Card key={category.value} className="flex flex-col items-center p-4">
+            <CardHeader className="flex flex-col items-center">
+              <CardTitle className="flex items-center gap-2 text-sm font-medium">
+                {iconMap[category.value]}
+                <CardContent className="text-sm font-medium">
+                  {category.label} - ฿{categoryTotal.toFixed(2)}
+                </CardContent>
+              </CardTitle>
+            </CardHeader>
+          </Card>
         );
       })}
     </div>
